@@ -1,0 +1,78 @@
+/*col-md-3 code first*/
+  .circular-image {
+    width: 80px; /* Set the width and height according to your preference */
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+
+  .circular-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+.transaction{
+    margin-top: 20px;
+}
+
+.col-md-3{
+  background-color: rgb(247, 249, 251);
+}
+/*col-md-3 code end*/
+
+/*col-md-6 code start*/
+
+.year{
+  margin-right: 35px;
+  margin-top: 25px;
+ 
+}
+.doughnut{
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+@media (max-width : 576px) {
+  .d-flex {
+    flex-direction : column;
+    margin-left: 1px;
+    
+    
+  }
+}
+
+@media (max-width : 576px) {
+  .retirement .d-flex{
+    flex-direction : row;
+    margin: 0px;
+    
+  }
+}
+.tag a {
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make it a block element to center align */
+    text-align: center; /* Center align the text */
+    color: blue;
+    margin-top: 10px;
+  }
+
+  .advance{
+    margin-top: 30px;
+    border-left: 2px solid blue;
+    padding-left: 10px;
+  }
+
+ 
+
+  .advance a {
+    text-decoration: none; /* Remove underline */
+     /* Center align the text */
+    color: blue;
+    margin-top: 10px;
+  }
+
+
+

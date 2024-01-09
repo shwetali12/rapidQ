@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="m-4">
+            <div class="d-flex">
+              <div class="circular-image">
+                <img src="images/img.jpg" alt="image">
+      
+              </div>
+              <div class="m-2 p-2">
+                <h2>Hi, Mike</h2>
+                <small class="text-muted">welcome back</small>
+              </div>
+            </div>
+  
+            <div class="today">
+              <h4>Today</h4>
+              <h3 class="fw-bold">$19,892</h3>
+              <small class="text-muted">Account Balance</small>
+  
+            </div>
+
+            <div class="mt-4">
+              <h5 class="fw-bold">$4000</h5>
+              <small class="text-muted">year-to-date Contribution</small>
+
+            </div>
+            <div class="mt-4">
+              <h5 class="fw-bold">$1,892</h5>
+              <small class="text-muted">Total Interest</small>
+
+            </div>
+            
+            <div class="mt-4">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">I want to</span>
+              </button>
+            </div>
+
+            <div class="mt-4">
+              <h5>Recent Transaction</h5>
+              <div class="mt-4">
+                <small class="text-muted">2020-08-07</small>
+                <p class="fw-bold">Withdrawal Transfer to Bank-XXX111</p>
+                <hr class="text-muted">
+              </div>
+              <div class="mt-4">
+                <small class="text-muted">2020-08-07</small>
+                <p class="fw-bold">Withdrawal Transfer to Bank-XXX111</p>
+                <hr class="text-muted">
+
+              </div>
+              <div class="mt-4">
+                <small class="text-muted">2020-08-07</small>
+                <p class="fw-bold">Withdrawal Transfer to Bank-XXX111</p>
+                <hr class="text-muted">
+
+              </div>
+
+            </div>
+      
+              
+            
+            
+          </div>
+        </div>
+        <div class=" container col-md-6">
+          <div class="mt-4">
+            <div class="">
+              <p class="text-primary"><b>Retirement Income</b></p>
+              <h5><b>Starting Year 2056</b></h5>
+              <div class="d-flex">
+                <div class="year border-bottom border-2 border-primary pb-3">
+                  <h5 class="fw-bold">$300,000</h5>
+                  <small class="text-muted">My Goal</small>
+                </div>
+                <div class="year border-bottom border-2 border-primary pb-3">
+                  <h5 class="fw-bold">59%</h5>
+                  <small class="text-muted">Goal Achieved</small>
+                </div>
+                <div class="year border-bottom border-2 border-primary pb-3">
+                  <h5 class="fw-bold">$300</h5>
+                  <small class="text-muted">Est. Monthly Income</small>
+                  
+                </div>
+              </div>
+              
+            </div>
+
+
+            <div class="mt-5">
+              
+                <p class="fw-bold">Contributions overtime</p>
+                <div style="width: 80%; ">
+                  <canvas id="myChart"></canvas>
+                </div>
+              
+                <script>
+                  // Sample data for the stacked bar chart
+                  var data = {
+                    labels: [20,25,30,35,40,45,50,55,60,65],
+                    datasets: [{
+                      label: 'Employer',
+                      data: [15,20,22,25,30,35, 40, 45, 48, 50],
+                      backgroundColor: 'rgb(0, 0, 139)',
+                    }, {
+                      label: 'Employee',
+                      data: [20, 25, 28, 32, 35,40,45,50,55,60],
+                      backgroundColor: 'rgb(0, 0, 255)',
+                    }, {
+                      label: 'Total',
+                      data: [30,35,38,40,45,50,55,60,65,70],
+                      backgroundColor: 'rgb(100, 149, 237)',
+                    }]
+                  };
+              
+                  // Chart configuration
+                  var options = {
+                    scales: {
+                      x: {
+                        stacked: true
+                      },
+                      y: {
+                        stacked: true,
+                        ticks: {
+            callback: function (value, index, values) {
+              return '$' + value;
+            }
+                      }}
+                    }
+                  };
+              
+                  // Get the canvas element
+                  var ctx = document.getElementById('myChart').getContext('2d');
+              
+                  // Create the stacked bar chart
+                  var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: data,
+                    options: options
+                  });
+                </script>
+              
+            </div>
+
+
+            <div class="mt-5">
+              <div class="">
+                <p class="fw-bold"> How do i compare to my peers?</p>
+                <small class="text-muted">These number are represent current goal achivement.</small>
+                <div class="d-flex">
+                  <div>
+                    <div class="btn-group">
+                     <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Age:Under 30
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Under 30</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                      </div>
+                    </div><br>
+                  
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Salary: k 20-k30
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Under 30</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                      </div>
+                    </div><br>
+
+                   
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Gender: Female
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Female/a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--doughnut code-->
+                  <div class="doughnut">
+                    <div style="display: flex; ">
+                      <div class="doughnu">
+                        <canvas id="doughnutChart1" width="100" height="100"></canvas>
+                        <p style="text-align: center;">Average </p>
+                      </div>
+                      <div>
+                        <canvas id="doughnutChart2" width="100" height="100"></canvas>
+                        <p style="text-align: center;">Top</p>
+                      </div>
+                      <div>
+                        <canvas id="doughnutChart3" width="100" height="100"></canvas>
+                        <p style="text-align: center;">Me</p>
+                      </div>
+                    </div>
+                  
+                    <script>
+                      // Sample data with one value for each doughnut
+                      var data1 = {
+                        datasets: [{
+                          data: [1],
+                          backgroundColor: ['green'], // Color for the first doughnut
+                        }],
+                      };
+                  
+                      var data2 = {
+                        datasets: [{
+                          data: [2],
+                          backgroundColor: ['green'], // Color for the second doughnut
+                        }],
+                      };
+
+                      var data3 = {
+                        datasets: [{
+                          data: [3],
+                          backgroundColor: ['green'], // Color for the second doughnut
+                        }],
+                      };
+                  
+                      // Doughnut chart options
+                      var options = {
+                        cutoutPercentage: 80, // Adjust the cutout percentage for the doughnut hole
+                        responsive: false,
+                        plugins: {
+                          legend: {
+                            display: false,
+                          },
+                          tooltip: {
+                            enabled: false,
+                          },
+                        },
+                      };
+                  
+                      // Get the canvas elements and create the doughnut charts
+                      var ctx1 = document.getElementById('doughnutChart1').getContext('2d');
+                      var myDoughnutChart1 = new Chart(ctx1, {
+                        type: 'doughnut',
+                        data: data1,
+                        options: options,
+                      });
+                  
+                      var ctx2 = document.getElementById('doughnutChart2').getContext('2d');
+                      var myDoughnutChart2 = new Chart(ctx2, {
+                        type: 'doughnut',
+                        data: data2,
+                        options: options,
+                      });
+
+                      var ctx3 = document.getElementById('doughnutChart3').getContext('2d');
+                      var myDoughnutChart3 = new Chart(ctx3, {
+                        type: 'doughnut',
+                        data: data3,
+                        options: options,
+                      });
+                    </script>
+                  </div>
+                  
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mt-4">
+            <h6 class="fw-bold">Retirement Strategy</h6>
+            <div>
+              <p>Employee Contribution</p>
+              <div class="progress" style="height: 20px;">
+              <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100">
+                12%
+              </div>
+            </div>
+            </div>
+            <div class="retirement">
+              <p>Retirement Age</p>
+              <div class="progress" style="height: 20px;">
+                <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                  65
+                </div>
+              </div>
+              <hr>
+              <div class="d-flex">
+                <p>Employee Contribution</p>
+                <div class="ms-auto">
+                  <p>8.5%</p>
+              </div>
+              </div>
+              <div class="d-flex">
+                <p>Interest Rate</p>
+                <div class="ms-auto">
+                  <p>5.5%</p>
+                </div>
+              </div>
+            <div class="">
+              <button class="btn btn-primary w-100">Update</button>
+            </div>
+            <div class="tag">
+              <a href="">View Help Dock></a>
+            </div>
+
+            <div class="advance">
+              <p>Are you considering a<br><b>Housing Advance?</b></p>
+              <small class="text-muted">Limited time reduced interest.</small><br>
+
+              <a href="">Learn More</a>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
